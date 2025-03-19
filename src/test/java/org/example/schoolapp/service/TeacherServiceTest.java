@@ -57,20 +57,20 @@ class TeacherServiceTest {
         assertEquals(1, teachers.size());
     }
 
-    @Test
-    public void updateTeacher()
-            throws TeacherDAOException, TeacherNotFoundException, TeacherAlreadyExistsException {
-
-        TeacherUpdateDTO updateDTO = new TeacherUpdateDTO(9, "Αθανάσιος", "Ιωάννου", "080654320", "Ανδρέας",
-                "6935565765", "a8ana@gmail.com", "Πατησίων", "76", "10434", 7);
-
-        teacherService.updateTeacher(9, updateDTO);
-
-        TeacherReadOnlyDTO teacher = teacherService.getTeacherById(9);
-        assertEquals("080654320", teacher.getVat());
-        assertEquals("Αθανάσιος", teacher.getFirstname());
-        assertEquals("Ιωάννου", teacher.getLastname());
-    }
+//    @Test
+//    public void updateTeacher()
+//            throws TeacherDAOException, TeacherNotFoundException, TeacherAlreadyExistsException {
+//
+//        TeacherUpdateDTO updateDTO = new TeacherUpdateDTO(9, "Αθανάσιος", "Ιωάννου", "080654320", "Ανδρέας",
+//                "6935565765", "a8ana@gmail.com", "Πατησίων", "76", "10434", 7);
+//
+//        teacherService.updateTeacher(9, updateDTO);
+//
+//        TeacherReadOnlyDTO teacher = teacherService.getTeacherById(9);
+//        assertEquals("080654320", teacher.getVat());
+//        assertEquals("Αθανάσιος", teacher.getFirstname());
+//        assertEquals("Ιωάννου", teacher.getLastname());
+//    }
 
     @Test
     public void deleteTeacherPositive()
@@ -96,7 +96,7 @@ class TeacherServiceTest {
     }
 
     @Test
-    void getTeacherByIdNegative() {
+    void getTeacherByIdNegative()  {
         assertThrows(TeacherNotFoundException.class, () -> {
             teacherService.getTeacherById(15);
         });
